@@ -1,7 +1,13 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Add your routes here - above the module.exports line
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// Add your routes here
+
 
 // record-a-grade: who to send certificate to
 router.post('/record-a-grade/v1/no-address-saved/send-the-certificate', (req, res) => {
@@ -231,4 +237,3 @@ router.post('/record-a-grade/v2/no-address-saved/employer-use-details', (req, re
         res.redirect('employer-search-address');
     }
 });
-module.exports = router
